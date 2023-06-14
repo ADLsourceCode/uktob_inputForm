@@ -49,7 +49,8 @@ function App() {
         </div>
         <button type="submit">Submit</button>
       </form>
-
+      {error && <p>{error}</p>}
+      {outputText && <p>{outputText}</p>}
     </div>
   );
 }
