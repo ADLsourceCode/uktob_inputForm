@@ -10,7 +10,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    setOutputText('');
     if (!inputString || !inputNumber) {
       setError('Please enter both a string and a number.');
       return;
