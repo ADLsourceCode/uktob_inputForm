@@ -8,6 +8,24 @@ function App() {
   const [outputText, setOutputText] = useState('');
   const [error, setError] = useState('');
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!inputString || !inputNumber) {
+      setError('Please enter both a string and a number.');
+      return;
+    }
+
+    if (isNaN(inputNumber)) {
+      setError('Please enter a valid number.');
+      return;
+    }
+
+    const repeatedString = inputString.repeat(Number(inputNumber));
+    setOutputText(repeatedString);
+    setError('');
+  };
+
   return (
     <div className="App">
        <form onSubmit={handleSubmit}>
